@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    ---dark-green: #1ba822;
+    --neutral-green: #43ad23;
+    --light-green: rgb(211, 248, 210);
+}
+
+body{
+    background-color: var(--light-green);
+}
+
+.container {
+    display: grid;
+    position: relative;
+    grid-template-columns: 350px 1fr 350px;
+}
+
+.course-container,
+.questions-container,
+.questions-number {
+    padding: 2em;
+}
+
+.course-container {
+    height: 100vh;
+    position: fixed;
+    width: 350px;
+    top: 0;
+    left: 0;
+}
+
+.course {
+    background-color: aliceblue;
+    margin-bottom: 1em;
+    padding: 1em;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.course.active {
+    background-color: #1ba822;
+    color: #fff;
+}
+
+.course:hover {
+    background-color: #43ad23;
+    color: #fff;
+}
+
+.question-container {
+    margin-bottom: 1em;
+}
+
+.questions-container {
+    margin: 0 350px;
+    width: 850px;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #fff;
+    padding: 1em;
+}
+
+.options-container {
+    background-color: aliceblue;
+}
+
+.option {
+    padding: 1em;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* .option::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgb(53, 53, 53);
+    border-radius: 5px;
+} */
+
+.option.selected {
+    pointer-events: none;
+    background-color: aqua;
+}
+
+.option.correct {
+    background-color: rgb(19, 255, 184);
+    color: #fff;
+    pointer-events: none;
+}
+
+.option.wrong {
+    background-color: rgb(255, 58, 58);
+    color: #fff;
+    pointer-events: none;
+}
+
+/* .option.selected::before {
+    background-color: rgb(53, 53, 53);
+} */
+
+.option:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+.submit {
+    position: relative;
+    z-index: 1000;
+    border: 0;
+    padding: 1em;
+    margin: auto;
+    cursor: pointer;
+}
+
+.questions-number {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+}
+
+.numbers {
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-radius: 9px;
+}
+
+.numbers > a {
+    border: 1px solid #000;
+    border-radius: 9px;
+    margin: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.numbers > a.done {
+     background-color: #1ba822;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}

@@ -106,7 +106,7 @@ const renderOptions = (optionsContainerEl, question) => {
 
         optionsContainerEl.appendChild(optionEl)
     }) 
-    pointsEl.innerHTML = points
+    pointsEl.innerHTML = `Points: ${points}`
     // console.log(question)
     // done = false
 }
